@@ -1,0 +1,134 @@
+body{
+    font-family: 'Roboto', Calibri, sans-serif;
+}
+
+label{
+    display: inline-block;
+    font-family: 'Ubuntu';
+    color: #110c57;
+}
+
+.faq-lien{
+padding: 20px 5px;
+font-size: 1.1rem;
+color: #111111;
+}
+
+.faq-lien b{
+font-size: 1.3rem;
+text-decoration: underline;
+color: #110c57;
+}
+
+hr{
+margin-top: 20px;
+width: 30%;
+}
+
+.faq-text{
+    font-size: 1rem;
+    padding: 0 5px;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.4s;    
+    color: #111111;
+}
+.faq-questions{
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 30px 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+}
+.faq-questions:hover{
+   background-color: #cccccc; 
+}
+.faq-questions:after {
+  content: '\276F'; 
+  width: 1em;
+  height: 1em;
+  color: #110c57;
+  float: right;
+  margin-right: 5px;
+  transition: all 0.35s;
+}
+
+.faq-container{
+    max-width:60vw; 
+    margin: 0 auto;
+}
+.faq-titre{
+    font-size:2.5rem; 
+    margin-bottom: 18px;
+    color: #111111;
+}
+
+.faq-close{
+    display: inline-block;
+    padding: 0.5em 0.8em;
+    margin-top: 5px;
+    color: #080535;
+    cursor: pointer;
+    border: 2px solid #080535;
+}
+.faq-close:hover{
+   background-color: #080535;
+   color: white;
+   transition: 0.3s ease-in-out;
+   border: 2px solid transparent;
+}
+
+.btn-fermer{
+    display: flex;
+    justify-content: flex-end;
+}
+
+input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+input:checked + .faq-questions::after{
+    transform: rotate(90deg);
+}
+
+input:checked ~ .faq-text{
+    max-height: 100vh;
+    padding: 1em 0;
+}
+
+@media screen and (max-width: 960px) {
+    .faq-container{
+        max-width: 95vw;
+    }
+    .faq-titre{
+        font-size: 1.8em;
+        padding-bottom: 5px;
+    }
+    .faq-questions{
+        text-transform: none;
+        font-size: 1em;
+        padding: 25px 5px;
+    }
+    .faq-text{
+        font-size: 1em;
+    }
+
+    .faq-close{
+        padding: 0.5em;
+        margin-top: 15px;
+    }
+
+    hr{
+    display: none;
+    }
+    .faq-lien{
+    padding: 10px 5px;
+    }
+}
